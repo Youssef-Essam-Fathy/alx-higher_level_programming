@@ -14,13 +14,15 @@ listint_t *insert_node(listint_t **head, int number)
 
 	if (!gded)
 		return (NULL);
+
+	gded->n = number;
+	gded->next = NULL;
+
 	if (!okda || gded->n < okda->n)
 	{
 		gded->next = okda;
 		return (*head = gded);
 	}
-	gded->n = number;
-	gded->next = NULL;
 
 	while (okda)
 	{
