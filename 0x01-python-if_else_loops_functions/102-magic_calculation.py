@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def perform_action(a, b, c):
+def compare(a, b, c):
     if a < b:
         return c
     elif c > b:
