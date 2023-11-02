@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "0x01-python-if_else_loops_functions"
+git commit -m "0x02-python-import_modules"
 git push
