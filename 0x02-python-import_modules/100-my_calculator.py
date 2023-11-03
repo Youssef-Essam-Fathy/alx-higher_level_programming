@@ -9,13 +9,13 @@ if __name__ == "__main__":
     n3 = int(sys.argv[3])
     oper = sys.argv[2]
     if oper == "+":
-        print("{} + {} = {}".format(n1, n3, add(oper)))
+        print("{} + {} = {}".format(n1, n3, add(n1, n3)))
     elif oper == "-":
-        print("{} - {} = {}".format(n1, n3, sub(oper)))
+        print("{} - {} = {}".format(n1, n3, sub(n1, n3)))
     elif oper == "*":
-        print("{} * {} = {}".format(n1, n3, mul(oper)))
+        print("{} * {} = {}".format(n1, n3, mul(n1, n3)))
     elif oper == "/":
-        print("{} / {} = {}".format(n1, n3, div(oper)))
+        print("{} / {} = {}".format(n1, n3, div(n1, n3)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
