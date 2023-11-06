@@ -5,3 +5,4 @@ def new_in_list(my_list, idx, element):
     else:
         my_list.insert(idx, element)
         return my_list
+# print(new_in_list([1,2,3],1,4))
