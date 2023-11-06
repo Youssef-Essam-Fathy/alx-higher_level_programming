@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
+    cop_list = my_list.copy()
     if idx < 0 or idx > len(my_list) - 1:
-        return my_list
+        return cop_list
     else:
-        my_list.insert(idx, element)
-        return my_list
-# print(new_in_list([1,2,3],1,4))
+        cop_list[idx] = element
+        return cop_list
