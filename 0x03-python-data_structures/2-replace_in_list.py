@@ -5,9 +5,3 @@ def replace_in_list(my_list, idx, element):
     else:
         my_list[idx] = element
         return my_list
-ml = [1,2,3]
-i = 1
-ne = 8
-nl = replace_in_list(ml,i,ne)
-print(nl)
-print(ml)
