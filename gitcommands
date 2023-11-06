@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "0x02-python-import_modules"
+git commit -m "0x03-python-data_structures"
 git push
