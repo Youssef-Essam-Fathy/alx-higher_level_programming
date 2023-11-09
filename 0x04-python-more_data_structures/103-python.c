@@ -40,7 +40,7 @@ void print_python_list(PyObject *p)
 void print_python_bytes(PyObject *p)
 {
 	unsigned char idx, range;
-	PyBytesObject *byts = (PyBytesObject *)p;
+	PyBytesObject *bytes = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
@@ -50,7 +50,7 @@ void print_python_bytes(PyObject *p)
 	}
 
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
-	printf("  trying string: %s\n", byts->ob_sval);
+	printf("  trying string: %s\n", bytes->ob_sval);
 
 	if (((PyVarObject *)p)->ob_size > 10)
 		range = 10;
@@ -60,7 +60,7 @@ void print_python_bytes(PyObject *p)
 	printf(" first %d bytes: ", range);
 	for (idx = 0; idx < range; idx++)
 	{
-		printf("%02hhx", byts->ob_sval[idx]);
+		printf("%02hhx", bytes->ob_sval[idx]);
 		if (idx == (range - 1))
 			printf("\n");
 		else
