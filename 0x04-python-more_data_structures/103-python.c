@@ -33,7 +33,15 @@ void print_python_list(PyObject *p)
 }
 
 /**
- * print_python_bytes - print basic info about python
+ * print_python_bytes - print basic info about python bytes
+ * @p: pointer
+ * Return: void
  **/
 void print_python_bytes(PyObject *p)
-{}
+{
+	unsigned char idx, range;
+	PyBytesObject *byts = (PyBytesObject *)p;
+
+	printf("[.] bytes object info\n");
+	
+}
