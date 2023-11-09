@@ -57,5 +57,5 @@ void print_python_bytes(PyObject *p)
 	else
 		range = ((PyVarObject *)p)->ob_size + 1;
 
-	printf(" first %d bytes:")
+	printf(" first %d bytes: ", range);
 }
