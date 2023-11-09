@@ -58,4 +58,12 @@ void print_python_bytes(PyObject *p)
 		range = ((PyVarObject *)p)->ob_size + 1;
 
 	printf(" first %d bytes: ", range);
+	for (idx = 0; idx < range; idx++)
+	{
+		printf("%02hhx", byts->ob_sval[idx]);
+		if (idx == (range - 1))
+			printf("\n");
+		else
+			printf(" ");
+	}
 }
