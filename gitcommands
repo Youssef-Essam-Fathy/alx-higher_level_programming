@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "0x04-python-more_data_structures"
+git commit -m "0x05-python-exceptions"
 git push
