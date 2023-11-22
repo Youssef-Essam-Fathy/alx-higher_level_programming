@@ -5,6 +5,8 @@ Private instance attribute: size
 Instantiation with size (no type/value verification)
 No module importing
 """
+
+
 class Square:
     """ Defines a square """
     def __init__(self, size):
