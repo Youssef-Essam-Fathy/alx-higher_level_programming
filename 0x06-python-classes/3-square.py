@@ -29,7 +29,7 @@ class Square:
 
         """ Public instance method
         Returns:
-            The size of square
+            The size of square squared
         """
 
         return self.__size ** 2

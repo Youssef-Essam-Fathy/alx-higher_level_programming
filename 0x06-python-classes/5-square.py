@@ -44,10 +44,19 @@ class Square:
         self.__size = value
 
     def area(self):
-
         """ Public instance method
         Returns:
             The size of square squared
         """
 
         return self.__size ** 2
+
+    def my_print(self):
+        """ Public instance method
+        Prints:
+            The square with the character # in stdout
+        """
+        for i in range(self.size):
+            for j in range(self.size):
+                print("#", end="\n" if j is self.size - 1 and j != i else "")
+        print()
