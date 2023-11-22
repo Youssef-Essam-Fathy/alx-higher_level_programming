@@ -73,11 +73,11 @@ class Square:
         """
         if self.size == 0:
             print()
-        for idx in range(self.position[1]):
+        for i in range(self.position[1]):
             print("\n")
-        for idx in range(self.size):
-            for jdx in range(self.position[0]):
+        for i in range(self.size):
+            for j in range(self.position[0]):
                 print(" ", end="")
-            for jdx in range(self.size):
+            for j in range(self.size):
                 print("#", end="")
             print()
