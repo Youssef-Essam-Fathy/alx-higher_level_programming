@@ -30,14 +30,6 @@ class Square:
         """
         return self.__size
 
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
     @property
     def position(self):
         """
@@ -46,9 +38,19 @@ class Square:
             TypeError: If size is not an integer
             ValueError: If size < 0
         """
-        return (self.__position)
+        return self.__position
+
+    @size.setter
+    """ To set size value """
+    def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
     @position.setter
+    """ To set position value """
     def position(self, value):
         if not isinstance(value, tuple) or
         len(value) != 2 or
@@ -70,12 +72,13 @@ class Square:
         Prints:
             The square with the character # in stdout
         """
-        if self.__size == 0:
-            print("")
-            return
-
-        [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") if s in range(0, self.__size)]
-            print("")
+        if self.size == 0:
+            print()
+        for i in range(self.position[1]):
+            print("\n")
+        for i in range(self.size):
+            for j in range(self.position[0]):
+                print(" ", end="")
+            for j in range(self.size):
+                print("#", end="")
+            print()
