@@ -86,7 +86,7 @@ Test first arg invalid:
 
 Test second arg invalid:
 
-    >>> add_integer(12 , [])
+    >>> add_integer(12, [])
     Traceback (most recent call last)
     ...
     TypeError: b must be an integer
