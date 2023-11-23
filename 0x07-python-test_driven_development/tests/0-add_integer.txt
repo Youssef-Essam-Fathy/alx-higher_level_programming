@@ -80,15 +80,15 @@ Add nan:
 Test first arg invalid:
 
     >>> add_integer("foo", 0)
-    Traceback (most recent call last)
-    ...
+    Traceback (most recent call last):
+        ...
     TypeError: a must be an integer
 
 Test second arg invalid:
 
-    >>> add_integer(12, [])
-    Traceback (most recent call last)
-    ...
+    >>> add_integer(123123, [])
+    Traceback (most recent call last):
+        ...
     TypeError: b must be an integer
 
 Test both args invalid:
