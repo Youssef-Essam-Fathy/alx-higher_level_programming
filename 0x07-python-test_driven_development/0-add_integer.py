@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module to add integers"""
 
+
 def add_integer(a, b=98):
     """
     Function to add integers
@@ -10,7 +11,7 @@ def add_integer(a, b=98):
         b: second integer
 
     Raises:
-        TypeError: exception with the message a must be an integer or b must be an integer
+        TypeError: if a or b aren't int or float
 
     Returns:
         return sum of two integers
@@ -20,6 +21,7 @@ def add_integer(a, b=98):
     if type(b) not in (int, float):
         raise TypeError("b must be an integer")
     return int(a) + int(b)
+
 
 if __name__ == "__main__":
     import doctest
