@@ -15,10 +15,10 @@ Test one el:
     [[1.0]]
 
 Test unmodified matrix:
-    >>> m = [[2, 4, 8], [1, 2, 3]]
-    >>> matrix_divided(m, 2)
+    >>> mat = [[2, 4, 8], [1, 2, 3]]
+    >>> matrix_divided(mat, 2)
     [[1.0, 2.0, 4.0], [0.5, 1.0, 1.5]]
-    >>> m[1][1]
+    >>> mat[1][1]
     2
 
 Test division by negative:
@@ -39,7 +39,7 @@ Test division by zero:
     ...
     ZeroDivisionError: division by zero
 
-Test 1st arg none:
+Test first arg none:
     >>> matrix_divided(none, 1)
     Traceback (most recent call last):
     ...
@@ -70,14 +70,14 @@ Test empty matrix more:
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
-Test 1st arg str:
+Test first arg str:
     >>> matrix_divided("foo", 1)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
-Test 1st arg empty list:
+Test first arg empty list:
     >>> matrix_divided([], 1)
     Traceback (most recent call last):
     ...
