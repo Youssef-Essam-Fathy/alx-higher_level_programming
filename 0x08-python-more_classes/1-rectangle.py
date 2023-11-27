@@ -11,8 +11,8 @@ class Rectangle:
             width: the ractangle width
             height: the rectangle height
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     """
@@ -32,6 +32,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
+        self.__width = value
 
     @property
     """
