@@ -55,10 +55,15 @@ class Rectangle:
 
     def __str__(self):
         """returns the string representations"""
-        if not self.width or not self.height:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        return ((str(Rectangle.print_symbol) * self.width + "\n") *
-               self.height)[:-1]
+
+        inst = []
+        for u in range(self.__height):
+            [inst.append(str(self.print_symbol)) for k in range(self.__width)]
+            if u != self.__height - 1:
+                inst.append("\n")
+        return ("".join(inst))
 
     def __repr__(self):
         """return a string representation for the rectangle"""
