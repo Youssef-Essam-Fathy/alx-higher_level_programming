@@ -48,3 +48,11 @@ class Rectangle:
             return 0
         else:
             return (self.__width + self.__height) * 2
+
+    def __str__(self):
+        """returns the printable representations for the rectangle"""
+        strg = ""
+        if self.__width != 0 and self.__height != 0:
+            strg += "\n".join("#" * self.__width
+                              for u in range(self.__height))
+        return strg
