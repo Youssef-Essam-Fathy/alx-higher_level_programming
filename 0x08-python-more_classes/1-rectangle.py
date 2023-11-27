@@ -5,29 +5,18 @@
 class Rectangle:
     """Define a rectangle"""
     def __init__(self, width=0, height=0):
-        """
-        Constructor
-        Args:
-            width: the ractangle width
-            height: the rectangle height
-        """
-        self.width = width
+        """Intialize the rectangle"""
         self.height = height
+        self.width = width
 
     @property
-    """
-    property to retreive the width
-    """
     def width(self):
+        """Getter for the private instance attribute width"""
         return self.__width
 
     @width.setter
-    """
-    Raises:
-        TypeError: if width isn't an integer
-        ValueError: if width < 0
-    """
     def width(self, value):
+        """Setter for the private instance attribute width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -35,19 +24,13 @@ class Rectangle:
         self.__width = value
 
     @property
-    """
-    property to retreive the height
-    """
+        """Getter for the private instance attribute height"""
     def height(self):
-        return self.__width
+        return self.__height
 
     @height.setter
-    """
-    Raises:
-        TypeError: if height isn't an integer
-        ValueError: if height < 0
-    """
     def height(self, value):
+        """Setter for the private instance attribute height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
