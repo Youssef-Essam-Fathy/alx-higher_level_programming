@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """No module importing"""
 
+
 def read_file(filename=""):
     """
     a function that reads a text file (UTF8)
