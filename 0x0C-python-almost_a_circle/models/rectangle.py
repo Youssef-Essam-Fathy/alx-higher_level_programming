@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''importing Base class module'''
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -71,3 +71,10 @@ class Rectangle(Base):
         '''prints in stdout the Rectangle instance with the character #'''
         for i in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        '''Return a string representation of the Rectangle instance'''
+        return (
+            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+            f"{self.width}/{self.height}"
+        )
