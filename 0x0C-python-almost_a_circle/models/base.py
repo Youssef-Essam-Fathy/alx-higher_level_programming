@@ -22,12 +22,6 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    @staticmethod
-    def from_json_string(json_string):
-        if json_string is None:
-            return []
-        return json.loads(json_string)
-
     @classmethod
     def save_to_file(cls, list_objs):
         if list_objs is None:
@@ -38,3 +32,21 @@ class Base:
             )
         with open(file_name, 'w') as file:
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy_instance = cls(1)
+        else:
+            raise ValueError(f"Unsupported class: {cls.__name__}")
+
+        dummy_instance.update(**dictionary)
+        return dummy_instance
