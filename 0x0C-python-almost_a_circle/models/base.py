@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''No module importing'''
-
+'''importing json module'''
+import json
 
 class Base:
     '''a representation for our oop'''
@@ -14,3 +14,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+    
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
