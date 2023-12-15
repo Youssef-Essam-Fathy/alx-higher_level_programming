@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 '''importing Rectangle class module'''
 
-from models.rectangle import Rectangle
+from rectangle import Rectangle
 
 
 class Square(Rectangle):
     '''A class representation area'''
     def __init__(self, size, x=0, y=0, id=None):
         '''Constructor'''
-        super().__init__(id, x, y, size, size)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
@@ -41,4 +41,4 @@ class Square(Rectangle):
                 self.y = args[3]
 
         for key, value in kwargs.items():
-            setatrr(self, key, value)
+            setattr(self, key, value)
