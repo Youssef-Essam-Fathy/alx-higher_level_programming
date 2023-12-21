@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''importing json module'''
 import json
-
+import csv
 
 class Base:
     '''a representation for our oop'''
@@ -65,3 +65,11 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        csv.dump(list_objs, cls.__name__ + ".csv")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        csv.load(cls.__name__ + ".csv")
