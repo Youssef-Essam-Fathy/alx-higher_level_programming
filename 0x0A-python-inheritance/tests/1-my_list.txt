@@ -1,0 +1,40 @@
+# Test Case 1
+# Description: Test sorting of a list with integers
+1
+4
+2
+3
+5
+# Expected Output:
+# [1, 4, 2, 3, 5]
+# [1, 2, 3, 4, 5]
+# [1, 4, 2, 3, 5]
+
+# Test Case 2
+# Description: Test sorting of an empty list
+# Expected Output:
+# []
+
+# Test Case 3
+# Description: Test sorting of a list with negative integers
+-5
+-2
+-4
+-1
+-3
+# Expected Output:
+# [-5, -2, -4, -1, -3]
+# [-5, -4, -3, -2, -1]
+# [-5, -2, -4, -1, -3]
+
+# Test Case 4
+# Description: Test sorting of a list with repeated elements
+3
+1
+2
+1
+3
+# Expected Output:
+# [3, 1, 2, 1, 3]
+# [1, 1, 2, 3, 3]
+# [3, 1, 2, 1, 3]
