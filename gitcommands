@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "0x0A-python-inheritance"
+git commit -m "0x0D-SQL_introduction"
 git push
