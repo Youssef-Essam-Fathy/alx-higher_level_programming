@@ -2,4 +2,4 @@
 SELECT name
 FROM hbtn_0d_usa.states
 WHERE name='California'
-ORDER BY cities.id ASC;
+ORDER BY (SELECT id FROM hbtn_0d_usa.cities) ASC;
