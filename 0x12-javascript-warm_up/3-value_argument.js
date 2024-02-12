@@ -2,7 +2,6 @@
 const valargv = process.argv;
 if (valargv[2]) {
   console.log(valargv[2]);
-}
-else {
+} else {
   console.log('No argument');
 }
