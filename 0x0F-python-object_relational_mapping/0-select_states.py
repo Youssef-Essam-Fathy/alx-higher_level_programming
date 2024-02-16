@@ -10,11 +10,11 @@ if __name__ == "__main__":
         passwd=argv[2],
         db=argv[3],
         charset="utf-8")
-    cursor = connection.cursor()
+    curr = connection.cursor()
     try:
         query = "SELECT * from states ORDER BY id ASC"
-        cursor.execute(query)
-        fetcher = cursor.fetchall()
+        curr.execute(query)
+        fetcher = curr.fetchall()
     except MySQLdb.Error:
         try:
             fetcher = ("MySQLdb Error")
@@ -23,5 +23,5 @@ if __name__ == "__main__":
 
     for i in fetcher:
         print(i)
-    cursor.close()
+    curr.close()
     connection.close()
