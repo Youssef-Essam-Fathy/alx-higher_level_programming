@@ -1,26 +1,27 @@
 #!/usr/bin/python3
-""" script that lists all states from the database hbtn_0e_0_usa """
+"""Importing the MySQLdb module"""
 from sys import argv
 import MySQLdb
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
+    connection = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=argv[1],
-        passwd=argv[2],
-        db=argv[3],
-        charset="utf8")
-    cur = conn.cursor()
+        password=argv[2],
+        database=argv[3],
+        charset="utf-8")
+    cursor = connection.cursor()
     try:
-        stmt = "SELECT * FROM states ORDER BY id ASC"
-        cur.execute(stmt)
-        rtn = cur.fetchall()
+        query = "SELECT * from states ORDER BY id ASC"
+        cursor.execute(query)
+        fetcher = cursor.fetchall()
     except MySQLdb.Error:
         try:
-            rtn = ("MySQLdb Error")
+            fetcher = ("MySQLdb Error")
         except IndexError:
-            rtn = ("MySQLdb Error - IndexError")
-    for i in rtn:
+            fetcher = ("MySQLdb Error - IndexError")
+
+    for i in fetcher:
         print(i)
-    cur.close()
-    conn.close()
+    cursor.close()
+    connection.close()
