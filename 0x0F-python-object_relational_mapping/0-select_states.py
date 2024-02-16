@@ -20,7 +20,6 @@ if __name__ == "__main__":
             fetcher = ("MySQLdb Error")
         except IndexError:
             fetcher = ("MySQLdb Error - IndexError")
-
     for i in fetcher:
         print(i)
     cursor.close()
