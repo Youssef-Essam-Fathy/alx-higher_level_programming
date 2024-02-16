@@ -4,12 +4,12 @@ from sys import argv
 import MySQLdb
 if __name__ == "__main__":
     connection = MySQLdb.connect(
-        host='localhost',
-        port='3306',
+        host="localhost",
+        port=3306,
         user=argv[1],
         password=argv[2],
         database=argv[3],
-        charset='utf-8'
+        charset="utf-8"
         )
     cursor = connection.cursor()
     try:
