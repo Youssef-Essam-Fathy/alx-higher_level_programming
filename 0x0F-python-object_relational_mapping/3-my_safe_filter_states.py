@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     query = "SELECT * FROM states WHERE BINARY name = %s\
              ORDER BY ID ASC"
-    cur.execute(query, (argv[4]))
+    cur.execute(query, [argv[4]])
     fetcher = cur.fetchall()
     for i in fetcher:
         print(i)
