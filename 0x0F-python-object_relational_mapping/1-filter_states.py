@@ -12,7 +12,7 @@ if __name__ == "__main__":
         db=argv[3]
     )
     cur = db.cursor()
-    query = "SELECT name FROM states WHERE name LIKE 'N%' ORDER BY ID ASC"
+    query = "SELECT * FROM states WHERE name LIKE 'N%'"
     cur.execute(query)
     fetcher = cur.fetchall()
     for i in fetcher:
