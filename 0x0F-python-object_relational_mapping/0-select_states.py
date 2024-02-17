@@ -12,7 +12,7 @@ if __name__ == "__main__":
         db=argv[3]
     )
     cur = db.cursor()
-    query = "SELECT * FROM states ORDER BY INT ASC"
+    query = "SELECT * FROM states"
     cur.execute(query)
     fetcher = cur.fetchall()
     for i in fetcher:
