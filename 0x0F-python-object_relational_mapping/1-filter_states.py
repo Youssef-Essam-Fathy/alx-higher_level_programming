@@ -12,7 +12,7 @@ if __name__ == "__main__":
         db=argv[3]
     )
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE CAST 'N%' ORDER BY ID ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY ID ASC"
     cur.execute(query)
     fetcher = cur.fetchall()
     for i in fetcher:
