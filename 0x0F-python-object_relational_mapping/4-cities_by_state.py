@@ -1,32 +1,24 @@
 #!/usr/bin/python3
 """
-a script that lists all cities from the database
+Script that lists all cities from the database
 """
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database_name>")
-        sys.exit(1)
+# The code should not be executed when imported
+if __name__ == '__main__':
+    # make a connection to the database
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
 
-    username, password, database_name = sys.argv[1:4]
-
-    try:
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=database_name
-        )
-        cur = db.cursor()
-        query = "SELECT c.id, c.name, s.name AS state_name FROM cities c JOIN states s ON c.state_id = s.id ORDER BY c.id ASC"
-        cur.execute(query)
-        fetcher = cur.fetchall()
-        for row in fetcher:
-            print(f"({row[0]}, '{row[1]}', '{row[2]}')")
-        cur.close()
-        db.close()
-    except MySQLdb.Error as e:
-        print(f"Error: {e}")
+    cur = db.cursor()
+    query = "SELECT cities.id, cities.name, states.name FROM cities\
+             INNER JOIN states ON cities.state_id = states.id\
+             ORDER BY cities.id ASC"
+    cur.execute(query)
+    fetcher = cur.fetchall()
+    for i in fetcher:
+        print(i)
+    # Clean up process
+    cur.close()
+    db.close()
