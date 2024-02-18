@@ -14,9 +14,9 @@ if __name__ == '__main__':
     cur = db.cursor()
     query = "SELECT cities.id, cities.name, states.name FROM cities\
              INNER JOIN states ON cities.state_id = states.id\
-             WHERE name = {}\
-             ORDER BY cities.id ASC".format(argv[4])
-    cur.execute(query)
+             WHERE states.name = '%s'\
+             ORDER BY cities.id ASC"
+    cur.execute(query, [argv[4]])
     fetcher = cur.fetchall()
     for i in fetcher:
         print(i)
