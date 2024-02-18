@@ -3,18 +3,30 @@
 a script that lists all cities from the database
 """
 import MySQLdb
-from sys import argv
+import sys
 
-if __name__ == "__main":
-    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                           passwd=argv[2], db=argv[3])
-    cur = conn.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities\
-                INNER JOIN states ON cities.state_id = states.id\
-                ORDER BY cities.id ASC")
+if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("Usage: python script.py <username> <password> <database_name>")
+        sys.exit(1)
 
-    fetcher = cur.fetchall()
-    for i in fetcher:
-        print(i)
-    cur.close()
-    conn.close()
+    username, password, database_name = sys.argv[1:4]
+
+    try:
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database_name
+        )
+        cur = db.cursor()
+        query = "SELECT c.id, c.name, s.name AS state_name FROM cities c JOIN states s ON c.state_id = s.id ORDER BY c.id ASC"
+        cur.execute(query)
+        fetcher = cur.fetchall()
+        for row in fetcher:
+            print(f"({row[0]}, '{row[1]}', '{row[2]}')")
+        cur.close()
+        db.close()
+    except MySQLdb.Error as e:
+        print(f"Error: {e}")
