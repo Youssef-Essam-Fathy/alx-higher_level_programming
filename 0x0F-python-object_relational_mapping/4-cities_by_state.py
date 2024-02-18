@@ -12,7 +12,9 @@ if __name__ == "__main":
         db=argv[3]
     )
     cur = conn.cursor()
-    query = "SELECT * FROM states ORDER BY cities.id ASC"
+    query = "SELECT cities.name, cities.id, states.name FROM cities\
+             INNER JOIN states ON cities.states_id = states.id\
+             ORDER BY cities.id ASC"
     cur.execute(query)
     fetcher = cur.fetchall()
     for i in fetcher:
