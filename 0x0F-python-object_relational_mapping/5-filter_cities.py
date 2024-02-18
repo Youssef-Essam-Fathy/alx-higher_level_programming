@@ -19,10 +19,10 @@ if __name__ == '__main__':
 
     cur.execute(query, [argv[4]])
     fetcher = cur.fetchall()
-    
+
     j = [i[1] for i in fetcher]
     print(", ".join(j))
-    
+
     # Clean up process
     cur.close()
     db.close()
