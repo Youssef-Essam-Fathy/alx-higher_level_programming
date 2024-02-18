@@ -12,7 +12,7 @@ if __name__ == "__main":
         db=argv[3]
     )
     cur = conn.cursor()
-    query = "SELECT * FROM cities ORDER BY ID ASC"
+    query = "SELECT * FROM states ORDER BY cities.id ASC"
     cur.execute(query)
     fetcher = cur.fetchall()
     for i in fetcher:
