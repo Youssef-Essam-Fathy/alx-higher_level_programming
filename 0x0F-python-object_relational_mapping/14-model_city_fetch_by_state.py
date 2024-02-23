@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Start link class to table in database
 """
-from sys import argv
+import sys
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import (create_engine)
@@ -9,9 +9,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
 
 if __name__ == "__main__":
-    user_name = argv[1]
-    password = argv[2]
-    db_name = argv[3]
+    user_name = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
     State.cities = relationship("City",
                                 order_by=City.id, back_populates="state")
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
