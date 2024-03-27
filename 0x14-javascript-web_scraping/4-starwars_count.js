@@ -4,7 +4,6 @@ const request = require('request');
 
 const swApi = process.argv[2];
 let num = 0;
-const charId = 18;
 
 request.get(swApi, (err, response, body) => {
   if (err) {
